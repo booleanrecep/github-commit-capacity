@@ -4,6 +4,6 @@ do
    echo $i >> README.md
    git add . 
    git commit -m 'commit'
-   sleep 1s
+   sleep 2s
    git push
 done
