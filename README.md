@@ -397,3 +397,4 @@ Test how many commit can be commited in a day to GitHub.
 97
 98
 99
+100
