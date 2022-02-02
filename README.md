@@ -4393,3 +4393,4 @@ Test how many commit can be commited in a day to GitHub.
 2017
 2018
 2019
+2020
