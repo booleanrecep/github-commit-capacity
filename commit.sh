@@ -4,5 +4,5 @@ do
    echo $i >> README.md
    git add . 
    git commit -m 'commit'
-   git push
+   # git push
 done
