@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in {10}
+for i in {1..10}
 do
    date >> README.md
    git add . 
