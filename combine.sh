@@ -4,6 +4,6 @@ do
    echo $i >> source.txt
    git add . 
    git commit -m 'github ist bombastisch'
-   sleep 1s
+#    sleep 1s
    git push
 done
