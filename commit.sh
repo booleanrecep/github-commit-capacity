@@ -1,8 +1,8 @@
 #!/bin/bash
-for i in {1..100000}
+for i in {1..800000}
 do
    echo $i >> source.txt
    git add . 
-   git commit -m 'commit'
+   git commit -m 'github ist bombastisch'
    # git push
 done
