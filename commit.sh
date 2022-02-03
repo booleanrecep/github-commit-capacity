@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in {1..900000}
+for i in {1..800000}
 do
    echo $i >> README.md
    git add . 
