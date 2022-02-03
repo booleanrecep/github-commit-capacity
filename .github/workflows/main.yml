@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Continous Commiting
 
 # Controls when the workflow will run
 on:
@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  commit_and_push:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,6 +32,4 @@ jobs:
           git config --global user.name "booleanrecep"
           
       - name: Commit and push
-        run: |
-          bash commit.sh
-          bash push.sh
+        run: bash combine.sh
