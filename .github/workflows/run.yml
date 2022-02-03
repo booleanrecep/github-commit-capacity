@@ -32,8 +32,8 @@ jobs:
           git config --global user.name "booleanrecep"
 
       # Runs a set of commands using the runners shell
-      - name: Run push
-        run: bash push.sh
+      - name: Run push & commit
+        run: |
+          bash push.sh
+          bash commit.sh
         
-      - name: Run commit 
-        run: bash commit.sh
