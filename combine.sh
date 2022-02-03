@@ -4,6 +4,13 @@ do
    echo $i >> source.txt
    git add . 
    git commit -m 'github ist bombastisch'
+
+   if [ $i % 100 -eq 0 ] 
+   then 
+      git push
+   else
+      echo "keep commiting"   
+   fi
 #    sleep 1s
-   git push
+   
 done
