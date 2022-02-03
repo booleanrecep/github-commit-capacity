@@ -1,4 +1,7 @@
 #!/bin/bash
+
+git pull
+
 for i in {1..800000}
 do
    echo $i >> source.txt
