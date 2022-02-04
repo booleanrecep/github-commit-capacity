@@ -13,7 +13,7 @@
 2. Running `combine.sh` via <i>workflows</i> to achive 1. step
 
 <code>combine.sh</code>
-```
+```shell
 #!/bin/bash
 
 git pull
