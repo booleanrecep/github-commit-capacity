@@ -20,7 +20,7 @@ git pull
 
 for i in {1..800000}
 do
-   echo $i >> source.txt
+   echo $i >> garbage.txt
    git add . 
    git commit -m 'github ist bombastisch'
 
