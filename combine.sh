@@ -5,7 +5,7 @@ git pull
 for i in {1..1000000}
 do
 #    echo $i >> can/$i.txt
-   echo $i >> garbage.txt
+#    echo $i >> garbage.txt
    git add . 
    git commit --allow-empty -m 'github ist bombastisch'
 
