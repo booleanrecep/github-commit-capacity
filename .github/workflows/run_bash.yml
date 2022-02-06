@@ -30,6 +30,6 @@ jobs:
           git config --global user.name "booleanrecep" 
           
       - name: Commit 
-        run: bash combine.sh
+        run: bash git.sh
  
         
