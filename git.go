@@ -3,18 +3,20 @@ package main
 import (
 	"fmt"
 	"os/exec"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	godotenv.Load()	
+	commitCount := os.Getenv("commitCount")
+	pushThreshold := os.Getenv("pushThreshold")
+	
 	git    := "git"
 	commit := "commit"
 	push   := "push"
 	allow_empty := "--allow-empty"
 	m := "-m"
 	message := "'go + git + github = 💥'"
-
-	commitCount := 5000000
-	pushThreshold := 5000
 
 	for i := 0; i < commitCount; i++ {
 
