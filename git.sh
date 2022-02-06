@@ -1,7 +1,7 @@
 #!/bin/bash
 
-commitCount=50
-pushThreshold=8
+commitCount=500000
+pushThreshold=1000
 
 git pull
 
