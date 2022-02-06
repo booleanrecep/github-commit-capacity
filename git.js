@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
-const commitCount = 1000000;
-const pushThreshold = 10000;
+const commitCount = 100000;
+const pushThreshold = 1000;
 
 const gitPull = () => {
   return exec("git pull", (err, stdout, stderr) => {
