@@ -1,6 +1,7 @@
 const { exec } = require("child_process");
-const commitCount = 100001;
-const pushThreshold = 1000;
+require('dotenv').config();
+const commitCount = process.env.COMMIT_COUNT;
+const pushThreshold = process.env.PUSH_THRESHOLD;
 
 const gitPull = () => {
   return exec("git pull", (err, stdout, stderr) => {
