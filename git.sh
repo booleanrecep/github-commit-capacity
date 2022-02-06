@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# commitCount=500000
-# pushThreshold=1000
 source .env
 git pull
 
