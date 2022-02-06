@@ -1,0 +1,28 @@
+name: Continous Commiting With Go
+
+on:
+  push:
+    branches: [ master ]
+    
+  workflow_dispatch:
+
+jobs:
+
+  run_git_with_go:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: GitHub config
+      run: |
+          git config --global user.email "recep.fed@gmail.com"
+          git config --global user.name "booleanrecep" 
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Run go
+      run: go run git.go
+
