@@ -1,0 +1,9 @@
+{
+  "name": "github-commit-capacity",
+  "version": "1.0.0",
+  "description": "GitHub Commit Capacity",
+  "main": "git.js",
+  "scripts": {},
+  "author": "booleanrecep<recep.fed@gmail.com>",
+  "license": "ISC"
+}
