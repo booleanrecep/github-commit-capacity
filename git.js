@@ -41,7 +41,6 @@ const run = () => {
 
   for (let i = 0; i < commitCount; i++) {
     gitCommit();
-    console.log("i", i);
 
     if (i % pushThreshold === 0) {
       gitPush();
