@@ -1,8 +1,8 @@
 #!/bin/bash
 
-commitCount=500000
-pushThreshold=1000
-
+# commitCount=500000
+# pushThreshold=1000
+source .env
 git pull
 
 for i in $( eval echo {1..$commitCount} )
