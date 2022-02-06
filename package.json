@@ -5,5 +5,8 @@
   "main": "git.js",
   "scripts": {},
   "author": "booleanrecep<recep.fed@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
