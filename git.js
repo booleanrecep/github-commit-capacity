@@ -1,5 +1,5 @@
 const { exec } = require("child_process");
-const commitCount = 100000;
+const commitCount = 1001;
 const pushThreshold = 1000;
 
 const gitPull = () => {
