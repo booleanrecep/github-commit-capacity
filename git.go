@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"os/exec"
 	"github.com/joho/godotenv"
 )
 
 func main() {
 	godotenv.Load()	
-	commitCount := os.Getenv("COMMIT_COUNT")
-	pushThreshold := os.Getenv("PUSH_THRESHOLD")
+	commitCount, _ := strconv.Atoi(os.Getenv("COMMIT_COUNT"))
+	pushThreshold, _ := strconv.Atoi(os.Getenv("PUSH_THRESHOLD"))
 	
 	git    := "git"
 	commit := "commit"
