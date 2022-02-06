@@ -1,39 +1,46 @@
 package main
 
 import (
-    "fmt"
-    "os/exec"
+	"fmt"
+	"os/exec"
 )
 
 func main() {
-    git := "git"
+	git    := "git"
+	commit := "commit"
+	push   := "push"
+	allow_empty := "--allow-empty"
+	m := "-m"
+	message := "'go + git + github = 💥'"
 
-    arg1 := "commit"
-    arg2 := "--allow-empty"
-    arg3 := "-m"
-    message := "'go + git + github = 💥'"
-    commitCount := 10//0000
+	commitCount := 100000
+	pushThreshold := 500
 
-    for i:=0; i<commitCount ;i++ {
+	for i := 0; i < commitCount; i++ {
 
-        cmd := exec.Command(git, arg1 , arg2, arg3, message)
-        stdout, err := cmd.Output()
+		cmdCommit := exec.Command(git, commit, allow_empty, m, message)
+		stdoutCommit, errCommit := cmdCommit.Output()
 
-        if err != nil {
-            fmt.Println("🔥",err.Error())
-            return
-        }
-        fmt.Println("🚀",string(stdout))
-    }
+		if errCommit != nil {
+			fmt.Println("🔥 commit error: ", errCommit.Error())
+			return
+		}
 
-    push := "push"
-    cmd := exec.Command(git, push)
-    stdout, err := cmd.Output()
+		fmt.Println("🚀 ",string(stdoutCommit))
 
-    if err != nil {
-        fmt.Println("🔥",err.Error())
-        return
-    }
-    fmt.Println("🛬",string(stdout))   
+		if (i % pushThreshold == 0) {
+
+			cmdPush := exec.Command(git, push)
+			_, errPush := cmdPush.Output()
+
+			if errPush != nil {
+				fmt.Println("🔥 push error: ", errPush.Error())
+		
+			}
+            
+			fmt.Println("🛬 pushed successfully")
+		}
+
+	}
 
 }
