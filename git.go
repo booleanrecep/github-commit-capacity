@@ -8,8 +8,8 @@ import (
 
 func main() {
 	godotenv.Load()	
-	commitCount := os.Getenv("commitCount")
-	pushThreshold := os.Getenv("pushThreshold")
+	commitCount := os.Getenv("COMMIT_COUNT")
+	pushThreshold := os.Getenv("PUSH_THRESHOLD")
 	
 	git    := "git"
 	commit := "commit"
