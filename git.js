@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
-const commitCount = 1001;
-const pushThreshold = 1000;
+const commitCount = 1000001;
+const pushThreshold = 10000;
 
 const gitPull = () => {
   return exec("git pull", (err, stdout, stderr) => {
@@ -17,7 +17,7 @@ const gitCommit = () => {
     'git commit --allow-empty -m "go + git + github = 💥"',
     (err, stdout, stderr) => {
       if (err) {
-        console.log("🔥 commit error: ", err);
+//         console.log("🔥 commit error: ", err);
         return;
       }
       console.log(`🚀 : ${stdout}`);
