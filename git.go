@@ -13,8 +13,8 @@ func main() {
 	m := "-m"
 	message := "'go + git + github = 💥'"
 
-	commitCount := 100000
-	pushThreshold := 500
+	commitCount := 1000000
+	pushThreshold := 1000
 
 	for i := 0; i < commitCount; i++ {
 
