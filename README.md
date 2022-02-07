@@ -148,8 +148,8 @@ run();
 > Disclamer: These observation and thoughts are not meant to be correct. They are my individual experiemnt and observations.
 * In GitHub there are a few  repos that have over 1m+ commits. ( I didn't examine througoutly). 
    * [Linux](https://github.com/torvalds/linux) : 1.072.960+m  ( respect to contributers)
-   * [Commited](https://github.com/virejdasani/Commited) 3.000.000
-   * [This repo](https://github.com/booleanrecep/github-commit-capacity) : 3.600.000+m
+   * [Commited](https://github.com/virejdasani/Commited) 3.000.000m
+   * [This repo](https://github.com/booleanrecep/github-commit-capacity) : 8.176.258m
 * Golang felt faster than Bash and Node, it's like a super-jet.
 * Github actions have some restrictions and limits . Some GitHub error messages are like :
    *  No space left on device.
