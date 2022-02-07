@@ -18,7 +18,6 @@ const gitCommit = () => {
     'git commit --allow-empty -m "go + git + github = 💥"',
     (err, stdout, stderr) => {
       if (err) {
-//         console.log("🔥 commit error: ", err);
         return;
       }
       console.log(`🚀 : ${stdout}`);
@@ -32,7 +31,6 @@ const gitPush = () => {
       console.log("🔥 push error: ", err);
       return;
     }
-
     console.log(`🛬 pushed successfully: ${stdout}`);
   });
 };
