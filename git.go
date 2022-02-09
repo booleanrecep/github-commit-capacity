@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
+	
 	godotenv.Load()	
+	
 	commitCount, _ := strconv.Atoi(os.Getenv("COMMIT_COUNT"))
 	pushThreshold, _ := strconv.Atoi(os.Getenv("PUSH_THRESHOLD"))
 	
@@ -23,6 +25,7 @@ func main() {
 	for i := 0; i < commitCount; i++ {
 
 		cmdCommit := exec.Command(git, commit, allow_empty, m, message)
+		
 		stdoutCommit, errCommit := cmdCommit.Output()
 
 		if errCommit != nil {
@@ -35,6 +38,7 @@ func main() {
 		if (i % pushThreshold == 0) {
 
 			cmdPush := exec.Command(git, push)
+			
 			_, errPush := cmdPush.Output()
 
 			if errPush != nil {
