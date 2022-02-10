@@ -1,17 +1,19 @@
 
-#### GitHub's Commit Capacity.
-
+### GitHub's Commit Capacity.
 
 #### Motivation 
-> Checking some relations and capabilities between client-server model, GitHub & Git.
+> Checking some relations and capabilities between GitHub & Git, client-server model, network, GitHub actions and Continous Integration.
 
 #### Goal
-> Making this repo most committed one
+> Making this repo most committed one on GitHub
 
 #### How ?
-1. Committing and pushing from GitHub to GitHub. 
-2. Getting `COMMIT_COUNT` and `PUSH_THRESHOLD` from <i>.env</i>
-3. Running `scripts` via <i>workflows</i> to achive 1. step
+
+1. Committing and pushing from GitHub to GitHub.
+2. In the beginning I used my local and another platform to run git workflow scripts. But later on, I used GitHub actions to run them. So that there is no network latency because committed repo and committing actions (GitHub actions) resides in the same platform/virtual machine. That means pushing from GitHub to GitHub. 
+3. Getting `COMMIT_COUNT` and `PUSH_THRESHOLD` from <i>.env</i>
+4. Running `scripts` via <i>workflows</i> to achive 1. step
+
 ###### With Bash
 <code>git.sh</code>
 ```shell
@@ -145,17 +147,19 @@ run();
 ```
 
 #### So far experiences
-> Disclamer: These observation and thoughts are not meant to be correct. They are my individual experiemnt and observations.
+> Disclamer: These observations and thoughts may not be correct. These are my personal experiments and observations.
 * In GitHub there are a few  repos that have over 1m+ commits. ( I didn't examine througoutly). 
-   * [Linux](https://github.com/torvalds/linux) : 1.072.960+m  ( respect to contributers)
-   * [Commited](https://github.com/virejdasani/Commited) 3.000.000m
-   * [This repo](https://github.com/booleanrecep/github-commit-capacity) : 8.176.258m
+   * [Linux](https://github.com/torvalds/linux) : 1.072.960~  ( respect to contributers)
+   * [Commited](https://github.com/virejdasani/Commited) 3.000.000~
+   * [This repo](https://github.com/booleanrecep/github-commit-capacity) : 12.176.258~
+* `git push`ing from another platform or from our local will take slightly more time. Because there will be network latency. But using GitHub actions means our code/repo and Git are in same platform/machine ( a virtual machine provisioned by GitHub which our repo and action runners resides). So that there will be no network latency. That makes `git push`  blazingly faster.   
 * Golang felt faster than Bash and Node, it's like a super-jet.
 * Github actions have some restrictions and limits . Some GitHub error messages are like :
    *  No space left on device.
    *  You are running out of disk space.
+   *  Each runner has only 6 hours (360 minute) exact time to do it's job.
 * Temperature of my computer (2011 model Asus brand 4 core i7 processor) suddenly rised and the fan screamed. In System Monitor, the each of 4 core were over 80%.
-* With Go every second (~1000ms)  ~1000 commits can be pushed. Disclamer: For that measurement I observed commit time in GitHub. So it's not scientific :)
+* In GitHub actions with Go every three second (~3000ms)  ~1000 commits can be pushed. Disclamer: For that measurement I observed commit time in GitHub. So it's not scientific :)
 * [Gitpod](https://gitpod.io/) blocked my account after running some scripts on their server. As they explained doing so degraded their platform and it looked like a DoS attack. Thanks to them again for unblocking my account. It's a nice and powerful platform.
 * GitHub is such a powerful platform. Tens of thousands of file (.txt) I have created and written with commits alongside of push and nothing broken. 
 * I have learned also that git has a flag that is `--allow-empty` and lets you write commit without any change. 
